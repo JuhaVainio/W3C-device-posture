@@ -214,7 +214,7 @@
 
         enum DevicePostureType {
           "continuous",
-          "folded"      
+          "folded"
         };
       </pre>
       <section>
@@ -613,6 +613,93 @@
           </p>
         </section>
       </section>
+    </section>
+    <section id="automation" class="informative">
+      <h2>
+        Automation
+      </h2>
+      <p>
+        The Device Posture API pose a challenge to test authors, as fully
+        exercising interface requires physical hardware devices. To address this
+        challenge this document define [WEBDRIVER2]
+        <a href="https://w3c.github.io/webdriver/#dfn-extension-commands">
+        extension command</a> that allow controlling device posture like in real
+        device.
+      </p>
+      <h3>
+        Extension Commands
+      </h3>
+      <h4>
+        Set device posture
+      </h4>
+      <table class="simple">
+        <tr>
+          <th>
+            HTTP Method
+          </th>
+          <th>
+            <a href="https://w3c.github.io/webdriver/#dfn-extension-command-uri-template">
+            URI Template</a>
+          </th>
+        </tr>
+        <tr>
+          <td>
+            POST
+          </td>
+          <td>
+            window/deviceposture
+          </td>
+        </tr>
+      </table>
+      <p>
+        This <a href="https://w3c.github.io/webdriver/#dfn-extension-commands">
+        extension command</a> changes device posture to certain
+        {{DevicePostureType}}.
+      </p>
+      <table class="simple">
+        <caption>
+          Properties of the parameters argument used by this algorithm
+        </caption>
+        <tr>
+          <th>
+            Parameter name
+          </th>
+          <th>
+            Value type
+          </th>
+          <th>
+          Required
+          </th>
+        </tr>
+        <tr>
+          <td>
+            posture
+          </td>
+          <td>
+            String
+          </td>
+          <td>
+            yes
+          </td>
+        </tr>
+      </table>
+      <p>
+        The <a href="https://w3c.github.io/webdriver/#dfn-remote-end-steps">
+        remote end steps</a> are:
+      </p>
+      <ol class="algorithm">
+        <li>If is not {{DevicePostureType}}, return <a
+            href="https://w3c.github.io/webdriver/#dfn-error">error</a> with <a
+            href="https://w3c.github.io/webdriver/#dfn-error-code">WebDriver
+            error code</a> <a
+            href="https://w3c.github.io/webdriver/#dfn-invalid-argument">invalid
+            argument</a>.
+        </li>
+        <li>Set device posture as |posture|.
+        </li>
+        <li>Return success with data <code>null</code>.
+        </li>
+      </ol>
     </section>
     <section id="examples" class="informative">
       <h2>

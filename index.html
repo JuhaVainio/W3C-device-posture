@@ -684,11 +684,18 @@
         The [=remote end steps=] are:
       </p>
       <ol class="algorithm" data-cite="WEBDRIVER2">
-        <li>If |posture| is neither <a>continuous</a> nor <a>folded</a>, return
-            [=error=] with [=error code|WebDriver error code=]
-            [=invalid argument=].
+        <li>Let |posture| be the result of invoking get a property "posture"
+        from |parameters|.
         </li>
-        <li>Set device posture as |posture|.
+        <li>If |posture| is neither <a>continuous</a> nor <a>folded</a>, return
+        [=error=] with [=error code|WebDriver error code=] [=invalid argument=].
+        </li>
+        <li>Let |document| be the |context|'s [=navigable/active document=].
+        </li>
+        <li><a>Update the device posture information</a> of |document|.
+        </li>
+        <li><a>Fire an event</a> named `change` at |document|'s
+        {{Window.navigator.devicePosture}} object.
         </li>
         <li>Return success with data <code>null</code>.
         </li>

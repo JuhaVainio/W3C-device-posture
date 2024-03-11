@@ -614,7 +614,7 @@
         </section>
       </section>
     </section>
-    <section data-link-for="DevicePostureType">
+    <section>
       <h2>
         Automation
       </h2>
@@ -687,8 +687,9 @@
         <li>Let |posture| be the result of invoking get a property "posture"
         from |parameters|.
         </li>
-        <li>If |posture| is neither <a>continuous</a> nor <a>folded</a>, return
-        [=error=] with [=error code|WebDriver error code=] [=invalid argument=].
+        <li>If |posture| is neither {{DevicePostureType/continuous}} nor
+        {{DevicePostureType/folded}}, return [=error=] with
+        [=error code|WebDriver error code=] [=invalid argument=].
         </li>
         <li>Let |document| be the |context|'s [=navigable/active document=].
         </li>

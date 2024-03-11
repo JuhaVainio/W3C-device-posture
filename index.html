@@ -688,6 +688,9 @@
         <a data-cite="!WEBDRIVER2#dfn-getting-properties">get a property</a>
         "posture" from |parameters|.
         </li>
+        <li>If |posture| is not a [=string=], return [=error=] with
+        [=error code|WebDriver error code=] [=invalid argument=].
+        </li>
         <li>If |posture| is neither "{{DevicePostureType/continuous}}" nor
         "{{DevicePostureType/folded}}", return [=error=] with
         [=error code|WebDriver error code=] [=invalid argument=].

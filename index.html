@@ -182,6 +182,14 @@
               The <dfn>current posture</dfn>.
             </td>
           </tr>
+          <tr>
+            <td>
+              <dfn data-dfn-for="Document">[[\OverridePosture]]</dfn>
+            </td>
+            <td>
+              Posture to override posture defined by hardware. Used in testing.
+            </td>
+          </tr>
         </tbody>
       </table>
     </section>
@@ -436,6 +444,11 @@
           {{Document}} |document:Document| are as follows:
         </p>
         <ol class="algorithm">
+          <li>If |document:Document|.{{Document/[[OverridePosture]]}} contains
+          "{{DevicePostureType/continuous}}" or "{{DevicePostureType/folded}}",
+          return posture in
+          |document:Document|.{{Document/[[OverridePosture]]}}.
+          </li>
           <li>Return a {{DevicePostureType}} value determined in an
           [=implementation-defined=] way based on the current hinge angle
           value, [=current screen orientation=], as well as potential
@@ -698,11 +711,18 @@
         <li>Let |document| be the [=top-level traversable=]'s
         [=navigable/active document=].
         </li>
+        <li>Set |document|.{{Document/[[OverridePosture]]}} to |posture|.
+        </li>
         <li>Invoke [=device posture change steps=] with |document|.
         </li>
         <li>Return success with data <code>null</code>.
         </li>
       </ol>
+      <h4>
+        Clear device posture
+      </h4>
+      <li>Set |document|.{{Document/[[OverridePosture]]}} to <code>null</code>.
+      </li>
     </section>
     <section id="examples" class="informative">
       <h2>

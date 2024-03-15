@@ -752,8 +752,44 @@
       <h4>
         Clear device posture
       </h4>
-      <li>Set |document|.{{Document/[[PostureOverride]]}} to <code>null</code>.
-      </li>
+      <table class="simple">
+        <tr>
+          <th>
+            HTTP Method
+          </th>
+          <th>
+            [=extension command URI Template|URI Template=]
+          </th>
+        </tr>
+        <tr>
+          <td>
+            DELETE
+          </td>
+          <td>
+            /session/{session id}/deviceposture
+          </td>
+        </tr>
+      </table>
+      <p>
+        This [=extension commands|extension command=] removes device posture
+        override and returns device posture control back to hardware.
+      </p>
+      <p>
+        The [=remote end steps=] are:
+      </p>
+      <ol class="algorithm">
+        <li>Let |document| be the
+        <a data-cite="webdriver2/#dfn-current-browsing-context">current browsing
+        context</a>'s [=top-level traversable=]'s [=navigable/active document=].
+        </li>
+        <li>Set |document|.{{Document/[[PostureOverride]]}} to
+        <code>null</code>.
+        </li>
+        <li>Invoke [=device posture change steps=] with |document|.
+        </li>
+        <li>Return success with data <code>null</code>.
+        </li>
+      </ol>
     </section>
     <section id="examples" class="informative">
       <h2>

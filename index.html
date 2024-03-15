@@ -475,13 +475,9 @@
           {{Document}} |document:Document| are as follows:
         </p>
         <ol class="algorithm">
-          <li> Let |topLevelTraversable| be the |document:Document|'s
-          [=top-level traversable=]'s [=navigable/active document=].
-          </li>
-          <li>If |topLevelTraversable|.{{Document/[[OverridePosture]]}} contains
-          "{{DevicePostureType/continuous}}" or "{{DevicePostureType/folded}}",
-          return posture in
-          |document:Document|.{{Document/[[OverridePosture]]}}.
+          <li>If |document:Document|'s [=relevant global object=]'s
+          [=navigable=]'s [=top-level
+          traversable=].{{Document/[[OverridePosture]]}} is non-null, return it.
           </li>
           <li>Return a {{DevicePostureType}} value determined in an
           [=implementation-defined=] way based on the current hinge angle

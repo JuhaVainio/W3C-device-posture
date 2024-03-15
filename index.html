@@ -208,7 +208,7 @@
         <tbody>
           <tr>
             <td>
-              <dfn data-dfn-for="Document">[[\OverridePosture]]</dfn>
+              <dfn data-dfn-for="Document">[[\PostureOverride]]</dfn>
             </td>
             <td>
               Posture to override posture defined by hardware. Used in
@@ -477,7 +477,7 @@
         <ol class="algorithm">
           <li>If |document:Document|'s [=relevant global object=]'s
           [=navigable=]'s [=top-level
-          traversable=].{{Document/[[OverridePosture]]}} is non-null, return it.
+          traversable=].{{Document/[[PostureOverride]]}} is non-null, return it.
           </li>
           <li>Return a {{DevicePostureType}} value determined in an
           [=implementation-defined=] way based on the current hinge angle
@@ -742,7 +742,7 @@
         <a data-cite="webdriver2/#dfn-current-browsing-context">current browsing
         context</a>'s [=top-level traversable=]'s [=navigable/active document=].
         </li>
-        <li>Set |document|.{{Document/[[OverridePosture]]}} to |posture|.
+        <li>Set |document|.{{Document/[[PostureOverride]]}} to |posture|.
         </li>
         <li>Invoke [=device posture change steps=] with |document|.
         </li>
@@ -752,7 +752,7 @@
       <h4>
         Clear device posture
       </h4>
-      <li>Set |document|.{{Document/[[OverridePosture]]}} to <code>null</code>.
+      <li>Set |document|.{{Document/[[PostureOverride]]}} to <code>null</code>.
       </li>
     </section>
     <section id="examples" class="informative">

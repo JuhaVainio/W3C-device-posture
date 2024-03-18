@@ -201,7 +201,8 @@
         <tbody>
           <tr>
             <td>
-              <dfn data-dfn-for="Document">[[\PostureOverride]]</dfn>
+              <dfn data-dfn-for="top-level traversable">[[\PostureOverride]]
+              </dfn>
             </td>
             <td>
               Posture to override posture defined by hardware. Used in
@@ -470,9 +471,11 @@
           {{Document}} |document:Document| are as follows:
         </p>
         <ol class="algorithm">
-          <li>If |document:Document|'s [=relevant global object=]'s
-          [=navigable=]'s [=top-level
-          traversable=].{{Document/[[PostureOverride]]}} is non-null, return it.
+          <li>Let |topLevelTraversable| be |document|'s [=relevant global
+          object=]'s [=navigable=]'s [=top-level traversable=].
+          </li>
+          <li>If |topLevelTraversable|.<a data-link-for="top-level traversable">
+          [[\PostureOverride]]</a> is non-null, return it.
           </li>
           <li>Return a {{DevicePostureType}} value determined in an
           [=implementation-defined=] way based on the current hinge angle
@@ -737,7 +740,8 @@
         <a data-cite="webdriver2/#dfn-current-browsing-context">current browsing
         context</a>'s [=top-level traversable=]'s [=navigable/active document=].
         </li>
-        <li>Set |document|.{{Document/[[PostureOverride]]}} to |posture|.
+        <li>Set |document|.<a data-link-for="top-level traversable">
+        [[\PostureOverride]]</a> to |posture|.
         </li>
         <li>Invoke [=device posture change steps=] with |document|.
         </li>
@@ -777,7 +781,8 @@
         <a data-cite="webdriver2/#dfn-current-browsing-context">current browsing
         context</a>'s [=top-level traversable=]'s [=navigable/active document=].
         </li>
-        <li>Set |document|.{{Document/[[PostureOverride]]}} to
+        <li>Set |document|.<a data-link-for="top-level traversable">
+        [[\PostureOverride]]</a> to
         <code>null</code>.
         </li>
         <li>Invoke [=device posture change steps=] with |document|.

@@ -736,11 +736,11 @@
         "{{DevicePostureType/folded}}", return [=error=] with
         [=error code|WebDriver error code=] [=invalid argument=].
         </li>
-        <li>Let |document| be the
+        <li>Let |topLevelTraversable| be the
         <a data-cite="webdriver2/#dfn-current-browsing-context">current browsing
-        context</a>'s [=top-level traversable=]'s [=navigable/active document=].
+        context</a>'s [=browsing context/top-level traversable=].
         </li>
-        <li>Set |document|.<a data-link-for="top-level traversable">
+        <li>Set |topLevelTraversable|.<a data-link-for="top-level traversable">
         [[\PostureOverride]]</a> to |posture|.
         </li>
         <li>Invoke [=device posture change steps=] with |document|.
@@ -777,11 +777,11 @@
         The [=remote end steps=] are:
       </p>
       <ol class="algorithm">
-        <li>Let |document| be the
+        <li>Let |topLevelTraversable| be the
         <a data-cite="webdriver2/#dfn-current-browsing-context">current browsing
-        context</a>'s [=top-level traversable=]'s [=navigable/active document=].
+        context</a>'s [=browsing context/top-level traversable=].
         </li>
-        <li>Set |document|.<a data-link-for="top-level traversable">
+        <li>Set |topLevelTraversable|.<a data-link-for="top-level traversable">
         [[\PostureOverride]]</a> to
         <code>null</code>.
         </li>

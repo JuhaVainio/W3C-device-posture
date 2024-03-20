@@ -743,6 +743,9 @@
         <li>Set |topLevelTraversable|.<a data-link-for="top-level traversable">
         [[\PostureOverride]]</a> to |posture|.
         </li>
+        <li>Let |document| be |topLevelTraversable|'s [=navigable/active
+        document=]
+        </li>
         <li>Invoke [=device posture change steps=] with |document|.
         </li>
         <li>Return [=success=] with data <code>null</code>.
@@ -788,6 +791,9 @@
         <li>Set |topLevelTraversable|.<a data-link-for="top-level traversable">
         [[\PostureOverride]]</a> to
         <code>null</code>.
+        </li>
+        <li>Let |document| be |topLevelTraversable|'s [=navigable/active
+        document=]
         </li>
         <li>Invoke [=device posture change steps=] with |document|.
         </li>
